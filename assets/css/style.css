@@ -1,113 +1,333 @@
 /* ========================
-    HEADER & NAVIGATION
+    1. GENERAL STYLES & FONT
+   ======================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #5d5dff; /* Xanh tím */
+    --secondary-color: #ff6e87; /* Hồng */
+    --accent-color: #64ffda; /* Xanh lá nhạt */
+    --bg-color: #f7f9fc; /* Nền trắng xám nhạt */
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    --card-bg: #ffffff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========================
+    2. HEADER & NAVIGATION
    ======================== */
 .header {
     background-color: transparent;
-    color: var(--text-color-light);
-    padding: 1.2rem 2rem;
+    padding: 1.5rem 2rem;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 .header.scrolled {
-    background-color: rgba(44, 62, 80, 0.95); /* Màu nền tối hơn, có độ trong suốt */
-    box-shadow: var(--shadow-subtle);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    color: var(--text-color-light); /* Mặc định là màu sáng */
-    text-decoration: none;
     font-size: 1.8rem;
     font-weight: 700;
-    transition: color 0.4s ease;
+    color: var(--heading-color);
+    transition: color var(--transition-speed);
 }
 
-.header.scrolled .logo, .header.scrolled .nav-links a {
-    color: var(--text-color-light); /* Giữ màu sáng khi cuộn */
+.header.scrolled .logo {
+    color: var(--heading-color);
 }
 
-/* Các đoạn mã CSS khác giữ nguyên */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
 
 /* ========================
-    RESPONSIVE DESIGN (Cập nhật)
+    3. HERO SECTION
    ======================== */
-@media (max-width: 992px) {
-    .hero-content h1 {
-        font-size: 3rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .project-content img {
-        min-width: unset;
-        width: 100%;
-    }
-    .project-content, .about-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-description {
-        padding-right: 0;
-        width: 100%;
-    }
-    .about-text {
-        text-align: center;
-    }
-}
-@media (max-width: 768px) {
-    .header {
-        padding: 1rem;
-    }
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .nav-links {
-        gap: 1rem;
-        flex-wrap: wrap; /* Cho phép menu xuống dòng */
-        justify-content: center;
-    }
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-    .cta-button {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-    }
-    section {
-        padding: 4rem 1.5rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-    .profile-pic {
-        width: 180px;
-        height: 180px;
-    }
-    .project-detail-section {
-        padding-top: 6rem;
-    }
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/background.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    color: #fff;
 }
 
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
+.hero-content h1 {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(93, 93, 255, 0.3);
+}
+
+/* ========================
+    4. PROJECTS SECTION
+   ======================== */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    text-align: left;
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ========================
+    5. ABOUT SECTION
+   ======================== */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h2 {
+    text-align: left;
+}
+
+.profile-pic {
+    flex: 1;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+/* ========================
+    6. CONTACT SECTION
+   ======================== */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+}
+
+.contact-form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ========================
+    7. FOOTER
+   ======================== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+/* ========================
+    8. RESPONSIVE DESIGN
+   ======================== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 1.5rem;
     }
+    
+    .hero-section {
+        padding: 4rem 2rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text h2 {
+        text-align: center;
+    }
+
+    .project-detail-section .project-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
     .project-buttons {
         flex-direction: column;
-        gap: 0.8rem;
-    }
-    .cta-button {
-        width: 100%;
+        gap: 1rem;
     }
 }
