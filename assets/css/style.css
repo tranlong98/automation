@@ -199,9 +199,10 @@ section {
     margin: 20px 0;
 }
 
-.cta-main {
+.cta-button.cta-main {
+    display: block;
     width: 100%;
-    max-width:L 600px;
+    max-width: 600px;
     border-radius: 50px;
     padding: 15px 0;
     text-align: center;
