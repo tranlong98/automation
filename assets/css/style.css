@@ -23,20 +23,19 @@ html, body {
     padding: 0;
     width: 100%;
     overflow-x: hidden; /* **QUAN TRỌNG: Ngăn cuộn ngang** */
-    min-height: 100%; /* Đảm bảo body có chiều cao tối thiểu 100% */
+    min-height: 100%;
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Font hiện đại, tải từ Google Fonts */
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-light);
     color: var(--text-color-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased; /* Làm mịn chữ */
-    -moz-osx-font-smoothing: grayscale; /* Làm mịn chữ */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Thêm font Inter từ Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,9 +60,8 @@ a:hover {
 }
 
 section {
-    padding: 6rem 2rem; /* Padding cho các section */
-    width: 100%; /* Đảm bảo section chiếm toàn bộ chiều rộng */
-    /* Loại bỏ max-width và margin: auto ở đây để section full width */
+    padding: 6rem 2rem;
+    width: 100%;
 }
 
 /* ========================
@@ -91,9 +89,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* max-width: 1200px; */ /* Loại bỏ để navbar full width */
-    /* margin: 0 auto; */ /* Loại bỏ để navbar full width */
-    width: 100%; /* Đảm bảo navbar chiếm 100% của header */
+    width: 100%;
 }
 
 .logo {
@@ -163,8 +159,8 @@ section {
     animation: fadeInScale 1s ease-out forwards;
     opacity: 0;
     transform: scale(0.9);
-    max-width: 90%; /* Giới hạn chiều rộng trên mobile */
-    padding: 1rem; /* Thêm padding để tránh chữ dính vào mép */
+    max-width: 90%;
+    padding: 1rem;
 }
 
 @keyframes fadeInScale {
@@ -518,7 +514,7 @@ section {
     FOOTER
    ======================== */
 .footer {
-    position: relative; /* Sửa lỗi chính tả từ 'ralative' thành 'relative' */
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -581,13 +577,13 @@ section {
     .cta-button {
         padding: 1rem 2rem;
         font-size: 1rem;
-        width: calc(100% - 20px); /* Đảm bảo nút không bị tràn khi có gap */
-        max-width: 300px; /* Giới hạn để nút không quá lớn trên mobile */
+        width: calc(100% - 20px);
+        max-width: 300px;
     }
     .cta-container {
         flex-direction: column;
         align-items: center;
-        max-width: 100%; /* Đảm bảo container chiếm toàn bộ chiều rộng */
+        max-width: 100%;
     }
     section {
         padding: 4rem 1.5rem;
@@ -612,15 +608,13 @@ section {
         flex-wrap: wrap;
         justify-content: center;
     }
-    /* .cta-container và .cta-button đã được xử lý ở media 768px, có thể tinh chỉnh thêm nếu cần */
 }
 
-/*test*/
-/* Đã bỏ 'main' và 'section' test vì có thể gây xung đột với các section chính */
-
-/* tuyết rơi */
+/* ========================
+    SNOWFALL EFFECT
+   ======================== */
 .snowflake {
-    position: fixed; /* Thay đổi thành fixed để tuyết luôn hiển thị trên viewport */
+    position: fixed;
     background-color: #fff;
     border-radius: 50%;
     opacity: 0.8;
