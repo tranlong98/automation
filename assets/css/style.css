@@ -374,6 +374,31 @@ section {
 .about-text strong {
     color: var(--primary-color);
 }
+/*test*/
+/* Đảm bảo các thẻ được căn chỉnh theo kiểu flexbox */
+.cta-container {
+    display: flex;
+    flex-wrap: wrap; /* Đảm bảo các phần tử có thể gập lại khi không đủ không gian */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+    justify-content: space-between; /* Phân bổ không gian đều giữa các thẻ */
+}
+
+/* Căn chỉnh các thẻ theo 2 hàng, mỗi hàng 2 ô */
+.cta-button {
+    width: calc(50% - 10px); /* Mỗi ô chiếm 50% chiều rộng của container và có một chút khoảng cách */
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo padding không làm ảnh hưởng đến kích thước tổng */
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
 
 /* ========================
     CONTACT SECTION
