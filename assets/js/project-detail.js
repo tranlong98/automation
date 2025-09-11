@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             liveUrl: 'https:example.com', // Thay bằng URL demo của bạn
             sourceUrl: 'https:example.com' // Thay bằng URL mã nguồn GitHub của bạn
-        },
+        }
         // Thêm các dự án khác vào đây theo cấu trúc tương tự
         // Đảm bảo id là duy nhất cho mỗi dự án
     ];
