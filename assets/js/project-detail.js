@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: '1',
             title: 'Cánh tay robot',
             summary: 'Cánh tay robot tự động hóa, một phần trong dây chuyền tự động hóa gắp hàng, giúp tối ưu hóa quy trình sản xuất trong các nhà máy và khu công nghiệp, nâng cao hiệu quả và giảm thiểu sai sót.',
-            image: '../assets/images/project1.jpg',
+            image: 'assets/images/project1.jpg',
             details: [
                 'Công nghệ: Công nghệ chính: Cánh tay robot tự động với các bộ phận cơ khí, cảm biến và phần mềm điều khiển.
                  Hệ thống điều khiển: Các thuật toán AI và học máy được sử dụng để tối ưu hóa quy trình gắp và di chuyển hàng hóa.'
