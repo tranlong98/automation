@@ -602,3 +602,17 @@ main, section {
         justify-content: center;
     }
 }
+
+body {
+    padding: 100px;
+}
+
+section, .about-text, .contact-section p {
+    color: #ffffff;
+}
+
+section p, .about-text p {
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
