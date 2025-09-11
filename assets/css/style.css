@@ -530,13 +530,6 @@ section {
     text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
-
-/*giảm padding-bottom*/
-/*main, section {
-    padding-top: 120px;
-    padding-bottom: 60px;
-}*/
-
 /* ========================
     RESPONSIVE DESIGN
    ======================== */
@@ -608,10 +601,17 @@ section {
 }
 
 /*test*/
-section, .about-text, .contact-section p {
-    color: #ffffff;
+main, section {
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
-section p, .about-text p {
+section, .about-text, .contact-section p {
+    color: inherit;
+}
+.hero-section,
+.hero-sectiob p,
+.header,
+.footer {
     color: #ffffff;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
