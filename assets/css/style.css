@@ -72,7 +72,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 10000;
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -519,7 +519,7 @@ section {
     text-align: center;
     padding: 1rem;
     font-size: 0.95rem;
-    z-index: 1000;
+    z-index: 10000;
 }
 
 /*.footer a {
