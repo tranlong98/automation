@@ -192,14 +192,20 @@ section {
     opacity: 0.9;
 }
 
-.cta-main {
-    display: block;
+.cta-main-container {
     width: 100%;
-    max-wigth: 600px;
-    margin: 0 auto 2rem;
-    border-radius: 12px;
-    text-align: centenr;
+    display: flex;
+    justify-contner: contner;
+    margin: 20px 0;
+}
+
+.cta-main {
+    width: 100%;
+    max-width:L 600px;
+    border-radius: 50px;
     padding: 15px 0;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 /* ========================
