@@ -22,3 +22,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+/*tuyết rơi*/
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (Giữ nguyên các đoạn code JavaScript hiện có của bạn ở đây) ...
+
+    // Thêm hiệu ứng tuyết rơi
+    const snowflakeCount = 50; // Số lượng hạt tuyết
+    const body = document.body;
+
+    for (let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+
+        // Vị trí ngẫu nhiên ban đầu
+        const startX = Math.random() * window.innerWidth;
+        const startY = -Math.random() * window.innerHeight; // Bắt đầu từ trên cao
+        snowflake.style.left = `${startX}px`;
+        snowflake.style.top = `${startY}px`;
+
+        // Kích thước ngẫu nhiên
+        const size = Math.random() * 5 + 2; // Từ 2px đến 7px
+        snowflake.style.width = `${size}px`;
+        snowflake.style.height = `${size}px`;
+
+        // Thời gian rơi ngẫu nhiên
+        const animationDuration = Math.random() * 10 + 5; // Từ 5s đến 15s
+        snowflake.style.animationDuration = `${animationDuration}s`;
+        
+        // Độ trễ animation ngẫu nhiên
+        const animationDelay = Math.random() * 10; // Từ 0s đến 10s
+        snowflake.style.animationDelay = `-${animationDelay}s`; // Dùng số âm để tạo hiệu ứng tuyết đã rơi được một đoạn khi bắt đầu
+
+        // Hướng gió nhẹ (di chuyển ngang ngẫu nhiên)
+        const xEnd = startX + (Math.random() - 0.5) * 200; // Di chuyển +/- 100px ngang
+        snowflake.style.setProperty('--x-start', `${startX}px`);
+        snowflake.style.setProperty('--x-end', `${xEnd}px`);
+
+        body.appendChild(snowflake);
+    }
+});
