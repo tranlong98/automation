@@ -22,35 +22,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-/*music*/
-document.addEventListener('DOMContentLoaded', function() {
-    const audio = document.getElementById('background-music');
-    const playBtn = document.getElementById('play-music-btn');
-
-    // Mảng chứa các đường dẫn URL trực tiếp đến file nhạc online
-    const musicList = [
-        'https://youtu.be/MsyiNSbeuEI',
-        'https://youtu.be/stLrhYcR2VE',
-        'https://youtu.be/p-R0_4bohPk'
-        // Thêm các URL trực tiếp khác vào đây
-    ];
-
-    // Chọn ngẫu nhiên một bài hát từ danh sách và đặt nguồn cho audio
-    const randomSong = musicList[Math.floor(Math.random() * musicList.length)];
-    audio.src = randomSong;
-
-    // Lắng nghe sự kiện nhấp chuột vào nút bấm
-    playBtn.addEventListener('click', function() {
-        if (audio.paused) {
-            audio.play().catch(e => {
-                console.error("Lỗi khi phát nhạc:", e);
-            });
-            playBtn.textContent = 'Tắt Nhạc';
-        } else {
-            audio.pause();
-            playBtn.textContent = 'Bật Nhạc';
-        }
-    });
-});
-
-
