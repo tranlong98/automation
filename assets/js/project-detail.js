@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Hệ thống điều khiển: Các thuật toán AI và học máy được sử dụng để tối ưu hóa quy trình gắp và di chuyển hàng hóa.',
             ],
             liveUrl: 'https://vt.tiktok.com/ZSDLNLXDG/', // Thay bằng URL demo của bạn
-            sourceUrl: 'https:example.com' // Thay bằng URL mã nguồn GitHub của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
         {
             id: '2',
