@@ -192,6 +192,13 @@ section {
     opacity: 0.9;
 }
 
+.cta-main {
+    display: block;
+    width: 100%;
+    max-wigth: 400px;
+    margin: 0 auto 2rem;
+}
+
 /* ========================
     PROJECTS SECTION
    ======================== */
