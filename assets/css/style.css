@@ -64,7 +64,8 @@ section {
     HEADER & NAVIGATION
    ======================== */
 .header {
-    background-color: transparent; /* Ban đầu trong suốt */
+    background-color: rgba(44, 62, 80, 0.7);
+    backdrop-filter: blur(8px);
     color: var(--text-color-light);
     padding: 1.2rem 2rem;
     position: fixed; /* Thay đổi thành fixed */
@@ -76,7 +77,7 @@ section {
 }
 
 .header.scrolled {
-    background-color: var(--bg-dark); /* Màu nền tối khi cuộn */
+    background-color: rgba(44, 62, 80, 0.9);
     box-shadow: var(--shadow-subtle);
 }
 
@@ -508,15 +509,28 @@ section {
     FOOTER
    ======================== */
 .footer {
-    text-align: center;
-    padding: 2.5rem;
-    background-color: var(--bg-dark);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 62, 80, 0.7);
+    backdrop-filter: blur(8px);
     color: var(--text-color-light);
+    text-align: center;
+    padding: 1.2rem;
     font-size: 0.95rem;
+    z-index: 1000;
 }
 
 .footer a {
     color: var(--accent-color);
+}
+
+
+/*hhhh*/
+main, section {
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 /* ========================
