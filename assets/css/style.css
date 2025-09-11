@@ -193,12 +193,12 @@ section {
 }
 
 .cta-main {
-    display: block;
-    width: 90%;
+    display: block !important;
+    width: 90% !important;
     max-wigth: 500px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2rem !important;
+    border-radius: 12px !important;
     text-align: centenr;
-    border-radius: 12px;
 }
 
 /* ========================
