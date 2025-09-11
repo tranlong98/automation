@@ -194,9 +194,11 @@ section {
 
 .cta-main {
     display: block;
-    width: 100%;
-    max-wigth: 400px;
+    width: 90%;
+    max-wigth: 500px;
     margin: 0 auto 2rem;
+    text-align: centenr;
+    border-radius: 12px;
 }
 
 /* ========================
