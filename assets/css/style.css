@@ -611,3 +611,30 @@ section {
     padding-bottom: 60px;
     color: inherit;
 }
+/*tuyết rơi*/
+/* Hiệu ứng tuyết rơi */
+.snowflake {
+    position: absolute;
+    background-color: #fff; /* Màu trắng cho tuyết */
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none; /* Đảm bảo tuyết không chặn các sự kiện chuột */
+    animation-name: snowfall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 9999; /* Đảm bảo tuyết luôn nằm trên cùng */
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translate3d(var(--x-start, 0), 0, 0);
+        opacity: 0;
+    }
+    30% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate3d(var(--x-end, 0), 100vh, 0);
+        opacity: 0;
+    }
+}
