@@ -181,7 +181,7 @@ section {
 /* Style gốc cho tất cả các nút */
 .cta-button {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 10px 20px;
     font-size: 1rem;
     font-weight: bold;
     color: white;
