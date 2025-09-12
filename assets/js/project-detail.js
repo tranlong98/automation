@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                      'Áp dụng công nghệ thủy lực mạnh mẽ để tạo ra lực đột lớn nhưng vẫn duy trì sự ổn định và chính xác.',
                      'Sử dụng CNC và các phần mềm điều khiển để lập trình và tối ưu hóa quy trình đột phôi, giúp giảm thiểu lỗi và tăng tốc độ sản xuất.'
             ],
-            liveUrl: 'https:example.com',
-            sourceUrl: 'https:example.com'
+            liveUrl: '',
+            sourceUrl: ''
         },
         {
             id: '3',
@@ -52,9 +52,57 @@ document.addEventListener('DOMContentLoaded', () => {
                     'Tăng khả năng giải quyết vấn đề và sáng tạo trong các tình huống tự động hóa, cải thiện khả năng vận hành và bảo trì hệ thống tự động.',
                     'Cải thiện khả năng tiếp cận với công nghệ mới nhất của Siemens trong lĩnh vực tự động hóa công nghiệp.'
             ],
-            liveUrl: 'https:example.com', // Thay bằng URL demo của bạn
-            sourceUrl: 'https:example.com' // Thay bằng URL mã nguồn GitHub của bạn
-        }
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '4',
+            title: 'Chiếu sáng tự động sử dụng năng lượng mặt trời',
+            summary: 'Hệ thống chiếu sáng tự động sử dụng năng lượng mặt trời giúp tiết kiệm điện năng, thân thiện với môi trường và hoạt động hiệu quả ở các khu vực công cộng, đường phố hoặc vùng nông thôn chưa có điện lưới ổn định.',
+            image: '../assets/images/project4.jpg',
+            details: [
+                'Công nghệ: Sử dụng tấm pin năng lượng mặt trời để tích trữ điện năng vào ban ngày, cung cấp năng lượng cho đèn LED hoạt động vào ban đêm.',
+                'Hệ thống điều khiển: Cảm biến ánh sáng và bộ điều khiển tự động giúp bật/tắt đèn dựa trên mức độ ánh sáng môi trường.',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '5',
+            title: 'Mô hình Smart Home dùng ESP32 và RFID',
+            summary: 'Hệ thống nhà thông minh sử dụng ESP32 để điều khiển bật/tắt thiết bị từ xa qua mạng Wi-Fi, kết hợp với Arduino và module RFID để mở cửa bằng thẻ từ. Dự án giúp nâng cao tính tự động hóa và bảo mật cho ngôi nhà.',
+            image: '../assets/images/project5.jpg',
+            details: [
+                'Công nghệ: ESP32 được dùng để kết nối Wi-Fi, điều khiển các thiết bị như đèn, quạt thông qua ứng dụng hoặc giao diện web. Arduino UNO kết hợp với module RFID RC522 để xác thực thẻ từ và điều khiển cơ cấu mở cửa.',
+                'Hệ thống điều khiển: Giao tiếp giữa các vi điều khiển qua UART hoặc MQTT. ESP32 nhận lệnh từ người dùng và phản hồi trạng thái thiết bị. Arduino xử lý dữ liệu RFID và gửi tín hiệu mở cửa khi thẻ hợp lệ.',
+            ],
+            liveUrl: 'https://www.tiktok.com/@tranlong4.029/video/7402913924141567239?is_from_webapp=1&sender_device=pc&web_id=7549060459430069768', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '6',
+            title: 'Điều khiển động cơ DC Encoder',
+            summary: 'Hệ thống điều khiển động cơ DC có encoder, cho phép đọc tốc độ thực tế của động cơ và điều chỉnh tốc độ bằng tín hiệu PWM. Ứng dụng trong các hệ thống cần kiểm soát tốc độ chính xác như băng chuyền, robot di chuyển, v.v.',
+            image: '../assets/images/6.jpg',
+            details: [
+                'Công nghệ: Sử dụng động cơ DC tích hợp encoder để phản hồi tốc độ. Vi điều khiển (như Arduino hoặc ESP32) tạo xung PWM để điều khiển tốc độ động cơ.',
+                'Hệ thống điều khiển: Ứng dụng thuật toán PID để duy trì tốc độ ổn định. Encoder cung cấp xung phản hồi, từ đó tính toán và hiệu chỉnh sai lệch giữa tốc độ thực tế và tốc độ đặt.',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '7',
+            title: 'Mô hình ấp trứng sử dụng Arduino',
+            summary: 'Mô hình ấp trứng tự động sử dụng Arduino để giám sát và điều khiển nhiệt độ, độ ẩm, và cơ chế đảo trứng nhằm tạo môi trường tối ưu cho quá trình ấp trứng. Giúp tăng tỷ lệ nở và giảm công sức theo dõi thủ công.',
+            image: '../assets/images/project7.jpg',
+            details: [
+                'Công nghệ: Sử dụng Arduino Uno kết hợp với cảm biến nhiệt độ và độ ẩm (DHT11/DHT22), relay điều khiển đèn sưởi và quạt, cùng với mô-tơ đảo trứng định kỳ.',
+                'Hệ thống điều khiển: Arduino đọc dữ liệu cảm biến liên tục và điều chỉnh các thiết bị theo ngưỡng cài đặt. Đảo trứng được thực hiện tự động theo chu kỳ nhằm mô phỏng điều kiện ấp tự nhiên.',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
         // Thêm các dự án khác vào đây theo cấu trúc tương tự
         // Đảm bảo id là duy nhất cho mỗi dự án
     ];
