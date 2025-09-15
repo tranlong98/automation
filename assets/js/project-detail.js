@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: '5',
             title: 'Mô hình vườn thông minh',
             summary: 'Hệ thống vườn sử dụng ESP32 để điều khiển bật/tắt thiết bị và giám sát nhiệt độ, độ ẩm từ xa qua mạng Wi-Fi',
-            image: '../assets/images/project5project5.jpg',
+            image: '../assets/images/project5.jpg',
             details: [
                 'Công nghệ: ESP32 được dùng để kết nối Wi-Fi, điều khiển các thiết bị như đèn, bơm thông qua ứng dụng hoặc giao diện web.',
                 'Hệ thống điều khiển: ESP nhận tín hiệu từ cảm biến và gửi dữ liệu lên app hoặc web server. ',
