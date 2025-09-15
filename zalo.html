@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đang mở Zalo...</title>
+</head>
+<body>
+    <h1>Đang chuyển hướng đến Zalo...</h1>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Đây là deep link của bạn. Ví dụ: mở Zalo để kết bạn với user ID 12345
+            var deepLink = "zalo://qr/p/13g05et8rdo93";
+            
+            // Link để chuyển hướng nếu không mở được app
+            var androidFallback = "https://play.google.com/store/apps/details?id=com.zing.zalo";
+            var iosFallback = "https://apps.apple.com/us/app/zalo/id579713601";
+
+            // Kiểm tra hệ điều hành
+            if (/android/i.test(userAgent)) {
+                // Thử mở deep link
+                window.location.href = deepLink;
+                // Nếu không thành công sau một khoảng thời gian chờ, chuyển hướng đến Play Store
+                setTimeout(function() {
+                    window.location.href = androidFallback;
+                }, 2500); 
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // Thử mở deep link cho iOS
+                window.location.href = deepLink;
+                // Nếu không thành công sau một khoảng thời gian chờ, chuyển hướng đến App Store
+                setTimeout(function() {
+                    window.location.href = iosFallback;
+                }, 2500); 
+            } else {
+                // Đối với các thiết bị khác (máy tính)
+                window.location.href = "https://chat.zalo.me/";
+            }
+        });
+    </script>
+</body>
+</html>
