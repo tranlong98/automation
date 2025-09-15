@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: '5',
-            title: 'Mô hình Smart Home dùng ESP32 và RFID',
-            summary: 'Hệ thống nhà thông minh sử dụng ESP32 để điều khiển bật/tắt thiết bị từ xa qua mạng Wi-Fi, kết hợp với Arduino và module RFID để mở cửa bằng thẻ từ. Dự án giúp nâng cao tính tự động hóa và bảo mật cho ngôi nhà.',
-            image: '../assets/images/project5.jpg',
+            title: 'Mô hình vườn thông minh',
+            summary: 'Hệ thống vườn sử dụng ESP32 để điều khiển bật/tắt thiết bị và giám sát nhiệt độ, độ ẩm từ xa qua mạng Wi-Fi',
+            image: '../assets/images/project8.jpg',
             details: [
-                'Công nghệ: ESP32 được dùng để kết nối Wi-Fi, điều khiển các thiết bị như đèn, quạt thông qua ứng dụng hoặc giao diện web. Arduino UNO kết hợp với module RFID RC522 để xác thực thẻ từ và điều khiển cơ cấu mở cửa.',
-                'Hệ thống điều khiển: Giao tiếp giữa các vi điều khiển qua UART hoặc MQTT. ESP32 nhận lệnh từ người dùng và phản hồi trạng thái thiết bị. Arduino xử lý dữ liệu RFID và gửi tín hiệu mở cửa khi thẻ hợp lệ.',
+                'Công nghệ: ESP32 được dùng để kết nối Wi-Fi, điều khiển các thiết bị như đèn, bơm thông qua ứng dụng hoặc giao diện web.',
+                'Hệ thống điều khiển: ESP nhận tín hiệu từ cảm biến và gửi dữ liệu lên app hoặc web server. ',
             ],
-            liveUrl: 'https://www.tiktok.com/@tranlong4.029/video/7402913924141567239?is_from_webapp=1&sender_device=pc&web_id=7549060459430069768', // Thay bằng URL demo của bạn
+            liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
         {
@@ -103,6 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
+        {
+            id: '8',
+            title: 'Mô hình Smart Home dùng ESP32 và RFID',
+            summary: 'Hệ thống nhà thông minh sử dụng ESP32 để điều khiển bật/tắt thiết bị từ xa qua mạng Wi-Fi, kết hợp với Arduino và module RFID để mở cửa bằng thẻ từ. Dự án giúp nâng cao tính tự động hóa và bảo mật cho ngôi nhà.',
+            image: '../assets/images/project5.jpg',
+            details: [
+                'Công nghệ: ESP32 được dùng để kết nối Wi-Fi, điều khiển các thiết bị như đèn, quạt thông qua ứng dụng hoặc giao diện web. Arduino UNO kết hợp với module RFID RC522 để xác thực thẻ từ và điều khiển cơ cấu mở cửa.',
+                'Hệ thống điều khiển: Giao tiếp giữa các vi điều khiển qua UART hoặc MQTT. ESP32 nhận lệnh từ người dùng và phản hồi trạng thái thiết bị. Arduino xử lý dữ liệu RFID và gửi tín hiệu mở cửa khi thẻ hợp lệ.',
+            ],
+            liveUrl: 'https://www.tiktok.com/@tranlong4.029/video/7402913924141567239?is_from_webapp=1&sender_device=pc&web_id=7549060459430069768', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        }
         // Thêm các dự án khác vào đây theo cấu trúc tương tự
         // Đảm bảo id là duy nhất cho mỗi dự án
     ];
