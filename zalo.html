@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Đang mở Zalo...</title>
+  <meta charset="UTF-8">
+  <title>Đang mở Zalo...</title>
 </head>
 <body>
-    <h1>Đang chuyển hướng đến Zalo...</h1>
+  <h1>Đang chuyển hướng đến Zalo...</h1>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            
-            // Đây là deep link của bạn. Ví dụ: mở Zalo để kết bạn với user ID 12345
-            var deepLink = "zalo://qr/p/13g05et8rdo93";
-            
-            // Link để chuyển hướng nếu không mở được app
-            var androidFallback = "https://play.google.com/store/apps/details?id=com.zing.zalo";
-            var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            // Kiểm tra hệ điều hành
-            if (/android/i.test(userAgent)) {
-                // Thử mở deep link
-                window.location.href = deepLink;
-                // Nếu không thành công sau một khoảng thời gian chờ, chuyển hướng đến Play Store
-                setTimeout(function() {
-                    window.location.href = androidFallback;
-                }, 2500); 
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Thử mở deep link cho iOS
-                window.location.href = deepLink;
-                // Nếu không thành công sau một khoảng thời gian chờ, chuyển hướng đến App Store
-                setTimeout(function() {
-                    window.location.href = iosFallback;
-                }, 2500); 
-            } else {
-                // Đối với các thiết bị khác (máy tính)
-                window.location.href = "https://chat.zalo.me/";
-            }
-        });
-    </script>
+      // Deep link chuẩn (iOS)
+      var deepLinkIOS = "zalo://qr/p/13g05et8rdo93";
+
+      // Intent link (Android)
+      var deepLinkAndroid = "intent://qr/p/13g05et8rdo93#Intent;scheme=zalo;package=com.zing.zalo;end";
+
+      // Link fallback
+      var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
+      var pcFallback = "https://chat.zalo.me/";
+
+      if (/android/i.test(userAgent)) {
+        // Android → dùng intent
+        window.location.href = deepLinkAndroid;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS → dùng zalo://
+        window.location.href = deepLinkIOS;
+
+        // Nếu không có app thì fallback App Store
+        setTimeout(function () {
+          window.location.href = iosFallback;
+        }, 2500);
+      } else {
+        // PC → mở Zalo Web
+        window.location.href = pcFallback;
+      }
+    });
+  </script>
 </body>
 </html>
