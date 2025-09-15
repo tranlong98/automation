@@ -3,26 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Mở Zalo</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    a {
+      background: #0068ff;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
   <h1>Đang mở Zalo...</h1>
-  <a id="zaloLink" href="zalo://qr/p/13g05et8rdo93" style="display:none;">Mở Zalo</a>
+  <div id="androidArea" style="display:none;">
+    <p>Nhấn nút bên dưới để mở Zalo:</p>
+    <a href="zalo://qr/p/13g05et8rdo93">Mở bằng Zalo</a>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
       if (/android/i.test(userAgent)) {
-        // Giả lập click vào thẻ <a>
-        document.getElementById("zaloLink").click();
+        // Android: chỉ cho hiển thị nút, không auto được
+        document.getElementById("androidArea").style.display = "block";
+
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS thì redirect bình thường
+        // iOS: auto mở app
         window.location.href = "zalo://qr/p/13g05et8rdo93";
         setTimeout(function () {
           window.location.href = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
         }, 2500);
+
       } else {
-        // PC fallback
+        // PC: mở Zalo web
         window.location.href = "https://chat.zalo.me/";
       }
     });
