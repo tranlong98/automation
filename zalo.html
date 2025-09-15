@@ -2,43 +2,39 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Mở Zalo</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-    a {
-      background: #0068ff;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-  </style>
+  <title>Đang mở Zalo...</title>
 </head>
 <body>
-  <h1>Đang mở Zalo...</h1>
-  <div id="androidArea" style="display:none;">
-    <p>Nhấn nút bên dưới để mở Zalo:</p>
-    <a href="zalo://qr/p/13g05et8rdo93">Mở bằng Zalo</a>
-  </div>
+  <h1>Đang chuyển hướng đến Zalo...</h1>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+      // Deep link cho iOS
+      var deepLinkIOS = "zalo://qr/p/13g05et8rdo93";
+
+      // Link App Links cho Android
+      var deepLinkAndroid = "https://zalo.me/13g05et8rdo93";
+
+      // Fallback
+      var androidFallback = "https://play.google.com/store/apps/details?id=com.zing.zalo";
+      var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
+
       if (/android/i.test(userAgent)) {
-        // Android: chỉ cho hiển thị nút, không auto được
-        document.getElementById("androidArea").style.display = "block";
-
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS: auto mở app
-        window.location.href = "zalo://qr/p/13g05et8rdo93";
+        // Android: dùng App Links
+        window.location.href = deepLinkAndroid;
+      } 
+      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS: thử deep link
+        window.location.href = deepLinkIOS;
+        // Nếu không thành công thì fallback
         setTimeout(function () {
-          window.location.href = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
+          window.location.href = iosFallback;
         }, 2500);
-
-      } else {
-        // PC: mở Zalo web
+      } 
+      else {
+        // PC: mở Zalo Web
         window.location.href = "https://chat.zalo.me/";
       }
     });
