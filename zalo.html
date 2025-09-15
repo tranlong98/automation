@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Đang mở Zalo...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #0084ff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <h1>Đang chuyển hướng đến Zalo...</h1>
+  <p>Nếu không tự mở, hãy bấm nút bên dưới:</p>
+  <a id="fallbackBtn" class="cta-button" href="#">Mở lại Zalo</a>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Deep link cho iOS
       var deepLinkIOS = "zalo://qr/p/13g05et8rdo93";
-
-      // Link App Links cho Android
-      var deepLinkAndroid = "https://zalo.me/13g05et8rdo93";
-
-      // Fallback
-      var androidFallback = "https://play.google.com/store/apps/details?id=com.zing.zalo";
+      var deepLinkAndroid = "intent://qr/p/13g05et8rdo93#Intent;scheme=zalo;package=com.zing.zalo;end";
       var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
+      var pcLink = "https://chat.zalo.me/";
+
+      var targetLink = pcLink; // mặc định PC
 
       if (/android/i.test(userAgent)) {
-        // Android: dùng App Links
-        window.location.href = deepLinkAndroid;
-      } 
-      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS: thử deep link
-        window.location.href = deepLinkIOS;
-        // Nếu không thành công thì fallback
+        targetLink = deepLinkAndroid;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        targetLink = deepLinkIOS;
+        // fallback sau 2s nếu iOS không mở được app
         setTimeout(function () {
           window.location.href = iosFallback;
-        }, 2500);
-      } 
-      else {
-        // PC: mở Zalo Web
-        window.location.href = "https://chat.zalo.me/";
+        }, 2000);
       }
+
+      // Auto redirect
+      window.location.href = targetLink;
+
+      // Gắn cho nút fallback
+      document.getElementById("fallbackBtn").href = targetLink;
     });
   </script>
 </body>
