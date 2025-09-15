@@ -3,55 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Mở Zalo</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #0084ff;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
     <h1>Đang chuyển hướng đến Zalo...</h1>
-    <p id="msg"></p>
-    <a id="cta-button" class="cta-button" href="#" style="display:none;">Mở Zalo</a>
+    <p>Trình duyệt đang cố gắng mở ứng dụng Zalo. Nếu không thành công, vui lòng nhấn nút bên dưới.</p>
+    <a id="cta-button" href="#" style="display:none;">Mở Zalo</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            var deepLink = "zalo://qr/p/13g05et8rdo93"; // Thay đổi deep link của bạn ở đây
+            var deepLink = "zalo://qr/p/13g05et8rdo93"; // Your Zalo deep link
             var androidFallback = "https://play.google.com/store/apps/details?id=com.zing.zalo";
             var iosFallback = "https://apps.apple.com/us/app/zalo/id579713601";
             var ctaButton = document.getElementById("cta-button");
-            var msg = document.getElementById("msg");
 
             if (/android/i.test(userAgent)) {
-                // Trên Android, hiển thị nút để người dùng nhấn
-                msg.innerText = "Trình duyệt không thể tự động mở Zalo. Vui lòng nhấn nút bên dưới:";
-                ctaButton.href = deepLink;
-                ctaButton.style.display = "block";
+                // Sử dụng Intent URL cho Android
+                var intentUrl = "intent://" + deepLink.replace("zalo://", "") + "#Intent;scheme=zalo;package=com.zing.zalo;end";
+                window.location.href = intentUrl;
                 
+                // Hiển thị nút dự phòng nếu Intent không hoạt động
+                ctaButton.href = androidFallback;
+                ctaButton.style.display = "block";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 // Trên iOS, thử chuyển hướng trực tiếp
                 window.location.href = deepLink;
                 // Nếu không thành công, chuyển hướng đến App Store
                 setTimeout(function() {
                     window.location.href = iosFallback;
-                }, 2500); // 2.5 giây chờ
-                
+                }, 2500);
             } else {
-                // Trên các thiết bị khác (máy tính)
-                msg.innerText = "Sử dụng điện thoại để quét mã QR hoặc truy cập chat.zalo.me";
+                // Desktop
                 ctaButton.style.display = "none";
             }
         });
