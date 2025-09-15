@@ -23,28 +23,34 @@
 <body>
   <h1>Đang chuyển hướng đến Zalo...</h1>
   <p id="msg"></p>
-  <a id="zaloBtn" class="cta-button" href="zaloapp.com://qr/p/13g05et8rdo93" style="display:none" target="_blank" rel="noopener noreferrer">Mở Zalo</a>
+  <a id="zaloBtn" class="cta-button" href="#" style="display:none" target="_blank" rel="noopener noreferrer">Mở lại Zalo</a>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      var deepLink = "zalo://qr/p/13g05et8rdo93";
+      var deepLinkIOS = "zalo://qr/p/13g05et8rdo93";
+      var deepLinkAndroid = "zaloapp.com://qr/p/13g05et8rdo93";
       var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
       var pcLink = "https://chat.zalo.me/";
 
+      var targetLink = pcLink; // mặc định PC
+
       if (/android/i.test(userAgent)) {
-        // Android: chỉ hiện nút bấm để người dùng mở
-        document.getElementById("msg").innerText = "Hãy nhấn nút bên dưới để mở Zalo:";
+        targetLink = deepLinkAndroid;
+        // Android thường bị chặn auto → hiện nút để người dùng bấm
+        document.getElementById("msg").innerText = "Nhấn nút bên dưới để mở Zalo:";
+        document.getElementById("zaloBtn").href = targetLink;
         document.getElementById("zaloBtn").style.display = "inline-block";
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS: auto redirect
-        window.location.href = deepLink;
+      } 
+      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        targetLink = deepLinkIOS;
+        window.location.href = targetLink;
         setTimeout(function () {
           window.location.href = iosFallback;
         }, 2000);
-      } else {
-        // PC
+      } 
+      else {
         window.location.href = pcLink;
       }
     });
