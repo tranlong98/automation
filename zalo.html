@@ -2,31 +2,60 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đang mở Zalo...</title>
+  <title>Mở Zalo</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    button {
+      background-color: #0068ff;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0050cc;
+    }
+  </style>
 </head>
 <body>
-  <h1>Đang chuyển hướng đến Zalo...</h1>
+  <h1>Đang mở Zalo...</h1>
+  <p id="androidMessage" style="display:none;">
+    Nhấn nút bên dưới để mở ứng dụng Zalo:
+  </p>
+  <button id="openZaloBtn" style="display:none;">Mở bằng Zalo</button>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Link chính thức Zalo hỗ trợ deep link (Android/iOS đều nhận)
-      var zaloWebLink = "https://zalo.me/13g05et8rdo93"; 
+      // Deep link cho iOS
+      var deepLinkIOS = "zalo://qr/p/13g05et8rdo93";
 
-      // Fallback
+      // Link fallback
       var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
-      var androidFallback = "https://play.google.com/store/apps/details?id=com.zing.zalo";
+      var zaloWebLink = "https://zalo.me/13g05et8rdo93";
       var pcFallback = "https://chat.zalo.me/";
 
       if (/android/i.test(userAgent)) {
-        window.location.href = zaloWebLink;
+        // Android → hiện nút để người dùng tự bấm
+        document.getElementById('androidMessage').style.display = 'block';
+        var btn = document.getElementById('openZaloBtn');
+        btn.style.display = 'inline-block';
+        btn.onclick = function () {
+          window.location.href = zaloWebLink; // Mở link zalo.me (nếu có app sẽ hỏi mở)
+        };
+
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        window.location.href = zaloWebLink;
+        // iOS → tự động mở app
+        window.location.href = deepLinkIOS;
         setTimeout(function () {
           window.location.href = iosFallback;
         }, 2500);
+
       } else {
+        // PC → mở Zalo Web
         window.location.href = pcFallback;
       }
     });
