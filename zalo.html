@@ -3,60 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Mở Zalo</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-    button {
-      background-color: #0068ff;
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      font-size: 18px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0050cc;
-    }
-  </style>
 </head>
 <body>
   <h1>Đang mở Zalo...</h1>
-  <p id="androidMessage" style="display:none;">
-    Nhấn nút bên dưới để mở ứng dụng Zalo:
-  </p>
-  <button id="openZaloBtn" style="display:none;">Mở bằng Zalo</button>
+  <a id="zaloLink" href="zalo://qr/p/13g05et8rdo93" style="display:none;">Mở Zalo</a>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener("DOMContentLoaded", function() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Deep link cho iOS
-      var deepLinkIOS = "zalo://qr/p/13g05et8rdo93";
-
-      // Link fallback
-      var iosFallback = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
-      var zaloWebLink = "https://zalo.me/13g05et8rdo93";
-      var pcFallback = "https://chat.zalo.me/";
-
       if (/android/i.test(userAgent)) {
-        // Android → hiện nút để người dùng tự bấm
-        document.getElementById('androidMessage').style.display = 'block';
-        var btn = document.getElementById('openZaloBtn');
-        btn.style.display = 'inline-block';
-        btn.onclick = function () {
-          window.location.href = zaloWebLink; // Mở link zalo.me (nếu có app sẽ hỏi mở)
-        };
-
+        // Giả lập click vào thẻ <a>
+        document.getElementById("zaloLink").click();
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // iOS → tự động mở app
-        window.location.href = deepLinkIOS;
+        // iOS thì redirect bình thường
+        window.location.href = "zalo://qr/p/13g05et8rdo93";
         setTimeout(function () {
-          window.location.href = iosFallback;
+          window.location.href = "https://apps.apple.com/vn/app/zalo/id579523206?l=vi";
         }, 2500);
-
       } else {
-        // PC → mở Zalo Web
-        window.location.href = pcFallback;
+        // PC fallback
+        window.location.href = "https://chat.zalo.me/";
       }
     });
   </script>
