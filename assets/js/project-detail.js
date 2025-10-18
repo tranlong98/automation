@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: '3',
             title: 'Vali thực hành Siemens',
             summary: 'Vali thực hành Siemens là thiết bị giáo dục chuyên dụng giúp học viên thực hành và nắm vững các kỹ năng điều khiển tự động hóa, lập trình và bảo trì hệ thống điện trong môi trường công nghiệp. Thiết bị này hỗ trợ việc học và nghiên cứu các công nghệ tiên tiến của Siemens trong tự động hóa.',
-            image: '../assets/images/project3.jpg',
+            image: '../assets/images/project3-1.jpg',
             details: [
                 'Công nghệ:',
                     'Công nghệ chính: PLC Siemens, HMI (Human-Machine Interface), và các thiết bị điều khiển tự động.',
