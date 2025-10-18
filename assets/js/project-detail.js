@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Mô hình phân loại sản phẩm',
             summary: 'Phân loại sản phẩm kim loại, phi kim',
             image: '../assets/images/project10.jpg',
-            ],
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
@@ -140,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
             id: '11',
             title: 'Mô hình phân loại sản phẩm theo chiều cao',
             image: '../assets/images/project11.jpg',
-            ],
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
@@ -149,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Mô hình robot gắp hàng',
             summary: 'Sử dụng cánh tay robot để vận chuyển hàng từ băng chuyền xuống balet ',
             image: '../assets/images/project12.jpg',
-            ],
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         }
