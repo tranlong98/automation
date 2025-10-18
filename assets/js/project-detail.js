@@ -132,13 +132,22 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Mô hình phân loại sản phẩm',
             summary: 'Phân loại sản phẩm kim loại, phi kim',
             image: '../assets/images/project10.jpg',
+            details: [
+                'Công nghệ: Sử dụng PLC để điều khiển các thiết bị trong hệ thống',
+                'Hệ thống điều khiển: Dùng python quét mã QR truyền dữ liệu xuống PLC để điều khiển thiết bị ',
+            ],
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
         {
             id: '11',
             title: 'Mô hình phân loại sản phẩm theo chiều cao',
+            summary: 'Phân loại sản phẩm',
             image: '../assets/images/project11.jpg',
+            details: [
+                'Công nghệ: Sử dụng PLC để điều khiển các thiết bị trong hệ thống',
+                'Hệ thống điều khiển: các cảm biến để nhận diện vật cao hay thấp ',
+            ],
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         },
@@ -147,7 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Mô hình robot gắp hàng',
             summary: 'Sử dụng cánh tay robot để vận chuyển hàng từ băng chuyền xuống balet ',
             image: '../assets/images/project12.jpg',
-            liveUrl: '', // Thay bằng URL demo của bạn
+            details: [
+                'Công nghệ: Sử dụng PLC để điều khiển các thiết bị trong hệ thống',
+                'Hệ thống điều khiển: cảm biến phát hiện vật đến vị trí cần gắp sẽ dừng băng tải và cho robto gắp vật xuống  ',
+            ],
+            liveUrl: 'https://www.tiktok.com/@tranlong4.029/video/7562408611197029640?is_from_webapp=1&sender_device=pc&web_id=7501023032699749905', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         }
         // Thêm các dự án khác vào đây theo cấu trúc tương tự
