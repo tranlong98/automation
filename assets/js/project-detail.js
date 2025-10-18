@@ -126,6 +126,32 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             liveUrl: 'https://www.tiktok.com/@tranlong4.029/video/7555006523324239111?is_from_webapp=1&sender_device=pc&web_id=7501023032699749905', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '10',
+            title: 'Mô hình phân loại sản phẩm',
+            summary: 'Phân loại sản phẩm kim loại, phi kim',
+            image: '../assets/images/project10.jpg',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '11',
+            title: 'Mô hình phân loại sản phẩm theo chiều cao',
+            image: '../assets/images/project11.jpg',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '12',
+            title: 'Mô hình robot gắp hàng',
+            summary: 'Sử dụng cánh tay robot để vận chuyển hàng từ băng chuyền xuống balet ',
+            image: '../assets/images/project12.jpg',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         }
         // Thêm các dự án khác vào đây theo cấu trúc tương tự
         // Đảm bảo id là duy nhất cho mỗi dự án
