@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
             id: '13',
             title: 'Tủ điều khiển động cơ 3 pha',
             summary: 'Điều khiển chạy thuận nghịch động cơ 3 pha',
-            image: '../assets/images/project12.jpg',
+            image: '../assets/images/project13-1.jpg',
             details: [
-                '',
+                'Khóa chéo tránh hỏng động cơ',
             ],
             liveUrl: '', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
