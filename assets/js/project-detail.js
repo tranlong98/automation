@@ -162,6 +162,17 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             liveUrl: 'https://www.tiktok.com/@tranlong4.029/video/7562408611197029640?is_from_webapp=1&sender_device=pc&web_id=7501023032699749905', // Thay bằng URL demo của bạn
             sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
+        },
+        {
+            id: '13',
+            title: 'Tủ điều khiển động cơ 3 pha',
+            summary: 'Điều khiển chạy thuận nghịch động cơ 3 pha',
+            image: '../assets/images/project12.jpg',
+            details: [
+                '',
+            ],
+            liveUrl: '', // Thay bằng URL demo của bạn
+            sourceUrl: '' // Thay bằng URL mã nguồn GitHub của bạn
         }
         // Thêm các dự án khác vào đây theo cấu trúc tương tự
         // Đảm bảo id là duy nhất cho mỗi dự án
